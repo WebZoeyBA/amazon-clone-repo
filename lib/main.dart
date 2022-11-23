@@ -1,6 +1,7 @@
 import 'package:amazon_clone_app/constants/global_variables.dart';
 import 'package:amazon_clone_app/router.dart';
 import 'package:flutter/material.dart';
+import 'package:amazon_clone_app/features/auth/screens/auth_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,22 +26,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Hello."),
-        ),
-        body: Column(
-          children: [
-            const Center(
-              child: Text('Flutter Demo Home Page'),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text("Click"),
-            ),
-          ],
-        ),
-      ),
+      home: const AuthScreen(),
     );
   }
 }
