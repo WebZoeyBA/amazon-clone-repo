@@ -13,6 +13,7 @@ const PORT = 3000;
 const DB = "mongodb+srv://Faris:fssc1923nsaBA@cluster0.najngap.mongodb.net/?retryWrites=true&w=majority";
 
 //CLIENT -> MIDDLEWARE -> SERVER -> CLIENT
+app.use(express.json());
 app.use(authRouter);
 
 //Connections
