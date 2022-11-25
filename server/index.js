@@ -15,6 +15,9 @@ const DB = "mongodb+srv://Faris:fssc1923nsaBA@cluster0.najngap.mongodb.net/?retr
 //CLIENT -> MIDDLEWARE -> SERVER -> CLIENT
 app.use(express.json());
 app.use(authRouter);
+app.use(adminRouter);
+app.use(productRouter);
+app.use(userRouter);
 
 //Connections
 mongoose.connect(DB).then (() => {
@@ -24,6 +27,6 @@ console.log("connection succesful");
 });
 
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log ("connected at port ${PORT}");
 }); //localhost
