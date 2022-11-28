@@ -3,9 +3,12 @@
 //IMPORTS FROM PACKAGES
 const express = require ('express');
 const mongoose = require ('mongoose');
+const adminRouter = require('.routes/admin');
 
 //IMPORT FROM OTHER FILES
 const authRouter = require('./routes/auth');
+const productRouter = require('./routes/product');
+const userRouter = require('./routes/user');
 
 //INIT
 const app = express();

@@ -1,13 +1,12 @@
-import 'dart:js';
-
 import 'package:amazon_clone_app/constants/global_variables.dart';
+import 'package:amazon_clone_app/features/admin/screens/admin_screen.dart';
 import 'package:amazon_clone_app/providers/user_provider.dart';
 import 'package:amazon_clone_app/router.dart';
+import 'package:amazon_clone_app/widgets/bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:amazon_clone_app/features/auth/screens/auth_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:amazon_clone_app/services/auth_service.dart';
-import 'package:amazon_clone_app/features/auth/screens/auth_screen.dart';
 
 void main() {
   runApp(MultiProvider(providers: [
@@ -30,12 +29,14 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    authService.getUserData(context);
   }
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Amazon Clone',
       theme: ThemeData(
         scaffoldBackgroundColor: GlobalVariables.backgroundColor,
@@ -48,7 +49,11 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: const AuthScreen(),
+      home: Provider.of<UserProvider>(context).user.token.isNotEmpty
+          ? Provider.of<UserProvider>(context).user.type == 'user'
+              ? const BottomBar()
+              : const AdminScreen()
+          : const AuthScreen(),
     );
   }
 }
