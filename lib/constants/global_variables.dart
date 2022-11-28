@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-String uri = 'http://webzoeyba-amazon-clone-app:3000';
+String uri = 'http://92.36.199.181:3000';
 
 class GlobalVariables {
   // COLORS

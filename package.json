@@ -3,5 +3,27 @@
     "http": "^0.0.1-security",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.3"
-  }
+  },
+  "name": "amazon_clone_app",
+  "description": "A new Flutter project.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebZoeyBA/amazon-clone-repo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebZoeyBA/amazon-clone-repo/issues"
+  },
+  "homepage": "https://github.com/WebZoeyBA/amazon-clone-repo#readme"
 }
